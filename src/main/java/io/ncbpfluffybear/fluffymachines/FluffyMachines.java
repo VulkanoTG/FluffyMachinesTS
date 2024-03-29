@@ -52,7 +52,6 @@ public class FluffyMachines extends JavaPlugin implements SlimefunAddon {
         instance = this;
         // Read something from your config.yml
         Config cfg = new Config(this);
-
         if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Dev - ")) {
             new BlobBuildUpdater(this, getFile(), "FluffyMachines", "Dev").start();
         }
@@ -110,6 +109,9 @@ public class FluffyMachines extends JavaPlugin implements SlimefunAddon {
         getServer().getPluginManager().registerEvents(new KeyedCrafterListener(), this);
 
         final Metrics metrics = new Metrics(this, 8927);
+
+        //Research setup se a athena ama o gu vai funcionar
+        new ResearchSetup();
     }
 
     @Override
